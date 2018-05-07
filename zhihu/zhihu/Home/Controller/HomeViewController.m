@@ -36,7 +36,8 @@
     [[AFHTTPSessionManager manager] GET:@"https://news-at.zhihu.com/api/4/news/latest" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [NewsLatestModel mj_setupObjectClassInArray:^NSDictionary *{
             return @{
-                     @"stories" : @"StoriesModel"
+                     @"stories" : @"StoriesModel",
+                     @"top_stories" : @"Top_storiesModel"
                      };
         }];
         NewsLatestModel *news = [NewsLatestModel mj_objectWithKeyValues:responseObject];

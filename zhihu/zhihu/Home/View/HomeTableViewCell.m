@@ -11,7 +11,7 @@
 
 @property (nonatomic,strong)UIView *bgView;
 @property (nonatomic,strong)UIImageView *newsIv;
-@property (nonatomic,strong)UILabel *titleLable;
+@property (nonatomic,strong)UILabel *titleLabel;
 
 
 @end
@@ -22,15 +22,15 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self createBgView];
-        self.titleLable = [UILabel new];
-        [self.bgView addSubview:self.titleLable];
+        self.titleLabel = [UILabel new];
+        [self.bgView addSubview:self.titleLabel];
         self.newsIv = [UIImageView new];
         [self.bgView addSubview:self.newsIv];
         
         self.newsIv.sd_layout.topSpaceToView(self.bgView,10).leftSpaceToView(self.bgView, 10).widthIs(70).heightIs(60);
-        self.titleLable.sd_layout.topEqualToView(self.newsIv).leftSpaceToView(self.newsIv, 10).rightSpaceToView(self.bgView, 10).autoHeightRatio(0);
+        self.titleLabel.sd_layout.topEqualToView(self.newsIv).leftSpaceToView(self.newsIv, 10).rightSpaceToView(self.bgView, 10).autoHeightRatio(0);
         
-        [self.bgView setupAutoHeightWithBottomViewsArray:@[self.newsIv,self.titleLable] bottomMargin:10];
+        [self.bgView setupAutoHeightWithBottomViewsArray:@[self.newsIv,self.titleLabel] bottomMargin:10];
         
         [self setupAutoHeightWithBottomViewsArray:@[self.bgView] bottomMargin:5];
     }
@@ -51,7 +51,7 @@
 #pragma mark -- 设置数据
 -(void)setModel:(StoriesModel *)model{
     _model = model;
-    self.titleLable.text = model.title;
+    self.titleLabel.text = model.title;
     [self.newsIv sd_setImageWithURL: [NSURL URLWithString:[model.images firstObject]]];
 }
 

@@ -17,6 +17,8 @@
 		5652B59B20A03905009632CC /* NewsLatestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B59A20A03905009632CC /* NewsLatestModel.m */; };
 		5652B59E20A03961009632CC /* StoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B59D20A03961009632CC /* StoriesModel.m */; };
 		5652B5A120A03A76009632CC /* Top_storiesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5A020A03A76009632CC /* Top_storiesModel.m */; };
+		5652B5A420A04D3D009632CC /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5A320A04D3D009632CC /* BannerView.m */; };
+		5652B5A720A05CA5009632CC /* BannerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5A620A05CA5009632CC /* BannerImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		5652B59D20A03961009632CC /* StoriesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoriesModel.m; sourceTree = "<group>"; };
 		5652B59F20A03A76009632CC /* Top_storiesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Top_storiesModel.h; sourceTree = "<group>"; };
 		5652B5A020A03A76009632CC /* Top_storiesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Top_storiesModel.m; sourceTree = "<group>"; };
+		5652B5A220A04D3D009632CC /* BannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
+		5652B5A320A04D3D009632CC /* BannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
+		5652B5A520A05CA5009632CC /* BannerImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerImageView.h; sourceTree = "<group>"; };
+		5652B5A620A05CA5009632CC /* BannerImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerImageView.m; sourceTree = "<group>"; };
 		C887E4C6DE054DD8C0023111 /* libPods-zhihu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zhihu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +139,10 @@
 			children = (
 				5652B59520A032FC009632CC /* HomeTableViewCell.h */,
 				5652B59620A032FC009632CC /* HomeTableViewCell.m */,
+				5652B5A220A04D3D009632CC /* BannerView.h */,
+				5652B5A320A04D3D009632CC /* BannerView.m */,
+				5652B5A520A05CA5009632CC /* BannerImageView.h */,
+				5652B5A620A05CA5009632CC /* BannerImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5652B5A420A04D3D009632CC /* BannerView.m in Sources */,
 				5652B5A120A03A76009632CC /* Top_storiesModel.m in Sources */,
 				5652B58720A02CBB009632CC /* main.m in Sources */,
 				5652B59B20A03905009632CC /* NewsLatestModel.m in Sources */,
@@ -244,6 +255,7 @@
 				5652B59E20A03961009632CC /* StoriesModel.m in Sources */,
 				5652B59720A032FC009632CC /* HomeTableViewCell.m in Sources */,
 				5652B59320A0321F009632CC /* HomeViewController.m in Sources */,
+				5652B5A720A05CA5009632CC /* BannerImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
