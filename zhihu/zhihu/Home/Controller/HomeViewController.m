@@ -10,6 +10,7 @@
 #import "HomeTableViewCell.h"
 #import "NewsLatestModel.h"
 #import "StoriesModel.h"
+#import "BannerView.h"
 
 #define CELLID @"HomeCell"
 
@@ -18,6 +19,10 @@
 @property (nonatomic,strong)UITableView *tableView;
 
 @property (nonatomic,strong)NSMutableArray *newsArray;
+
+@property (nonatomic,strong)NewsLatestModel *lastModel;
+
+@property (nonatomic,strong)BannerView *bannerView;
 
 @end
 
@@ -28,8 +33,21 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.bannerView];
+    
+    self.bannerView.sd_layout.topSpaceToView(self.view, 0).leftSpaceToView(self.view, 0).rightSpaceToView(self.view, 0).heightIs(220);
+    
     [self getLates];
 }
+
+#pragma mark -- 懒加载
+- (BannerView *)bannerView{
+    if (!_bannerView) {
+        _bannerView = [[BannerView alloc]init];
+    }
+    return _bannerView;
+}
+
 
 #pragma mark -- 获取知乎最新新闻
 -(void)getLates {
@@ -42,6 +60,7 @@
         }];
         NewsLatestModel *news = [NewsLatestModel mj_objectWithKeyValues:responseObject];
         self.newsArray = news.stories.mutableCopy;
+        self.lastModel = news;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
@@ -50,7 +69,13 @@
 #pragma mark -- 设置数据
 -(void)setNewsArray:(NSMutableArray *) newsArray{
     _newsArray = newsArray;
+    
     [_tableView reloadData];
+}
+
+- (void)setLastModel:(NewsLatestModel *)lastModel{
+    _lastModel = lastModel;
+    self.bannerView.images = lastModel.top_stories;
 }
 
 #pragma mark -- UITableView设置
@@ -78,6 +103,9 @@
         _tableView.delegate = self;
         [_tableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:CELLID];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+        _tableView.tableHeaderView = headView;
     }
     return _tableView;
 }

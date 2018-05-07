@@ -52,7 +52,9 @@
         [self.scrollView addSubview:banner];
         
         if (self.images.count==0) {
-            banner.sd_layout.topSpaceToView(self.scrollView, 10).leftSpaceToView(self.scrollView, 0).bottomSpaceToView(self.scrollView, 0).widthEqualToHeight(self.scrollView,1);
+            banner.sd_layout.topSpaceToView(self.scrollView, 0).leftSpaceToView(self.scrollView, 0).bottomSpaceToView(self.scrollView, 0).widthRatioToView(self.scrollView, 1);
+        }else{
+            banner.sd_layout.topSpaceToView(self.scrollView, 0).leftSpaceToView([self.imageViews lastObject], 0).bottomSpaceToView(self.scrollView, 0).widthRatioToView(self.scrollView,1);
         }
         [self.imageViews addObject:banner];
         

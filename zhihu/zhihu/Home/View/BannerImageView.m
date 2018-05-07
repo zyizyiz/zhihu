@@ -20,7 +20,7 @@
         self.titleLabel = [UILabel new];
         [self addSubview:self.titleLabel];
         self.titleLabel.textColor = [UIColor whiteColor];
-        self.titleLabel.sd_layout.centerXEqualToView(self).leftSpaceToView(self,25).rightSpaceToView(self, 25).bottomSpaceToView(self, 35);
+        self.titleLabel.sd_layout.centerXEqualToView(self).leftSpaceToView(self,25).rightSpaceToView(self, 25).bottomSpaceToView(self, 35).autoHeightRatio(0);
     }
     return self;
 }
