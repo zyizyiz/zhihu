@@ -15,6 +15,7 @@
 @property (nonatomic,strong)UIScrollView *scrollView;
 @property (nonatomic,strong)UIPageControl *pageControl;
 @property (nonatomic,strong)NSMutableArray *imageViews;
+@property (nonatomic,strong)NSTimer *timer;
 
 
 @end
@@ -29,6 +30,7 @@
         self.scrollView.pagingEnabled = true;
         self.scrollView.bounces = NO;
         self.scrollView.showsHorizontalScrollIndicator = NO;
+        self.scrollView.delegate = self;
         
         self.pageControl = [[UIPageControl alloc]init];
         [self addSubview:self.pageControl];
@@ -57,9 +59,39 @@
             banner.sd_layout.topSpaceToView(self.scrollView, 0).leftSpaceToView([self.imageViews lastObject], 0).bottomSpaceToView(self.scrollView, 0).widthRatioToView(self.scrollView,1);
         }
         [self.imageViews addObject:banner];
+        self.scrollView.contentSize = CGSizeMake(self.imageViews.count*self.width, self.height);
         
     }
+    [self addTimer];
 }
+
+#pragma mark -- 滑动轮播图
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat xOffset = scrollView.contentOffset.x;
+    int currentPage = (int)(xOffset / self.width + 0.5);
+    self.pageControl.currentPage = currentPage;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.timer invalidate];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self addTimer];
+}
+
+
+#pragma mark -- 设置定时器
+-(void)addTimer{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextImg) userInfo:nil repeats:YES];
+}
+-(void)nextImg{
+    NSInteger page = (self.pageControl.currentPage + 1) % self.pageControl.numberOfPages;
+    //self.pageControl.currentPage = page;
+    CGFloat xOffset = page * self.width;
+    [self.scrollView setContentOffset:CGPointMake(xOffset, 0) animated:YES];
+}
+
 
 #pragma mark -- 懒加载
 - (NSMutableArray *)imageViews{

@@ -17,6 +17,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.contentMode = UIViewContentModeScaleAspectFill;
         self.titleLabel = [UILabel new];
         [self addSubview:self.titleLabel];
         self.titleLabel.textColor = [UIColor whiteColor];
