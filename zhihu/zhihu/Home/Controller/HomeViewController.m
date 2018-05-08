@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "NewInfoViewController.h"
+
 #import "HomeTableViewCell.h"
 #import "NewsLatestModel.h"
 #import "StoriesModel.h"
@@ -173,6 +175,11 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewInfoViewController *newInfoVc = [[NewInfoViewController alloc]init];
+    newInfoVc.storiesModel = self.newsArray[indexPath.row];
+    [self presentViewController:newInfoVc animated:YES completion:nil];
+}
 
 #pragma mark -- 表视图懒加载
 -(UITableView*)tableView{

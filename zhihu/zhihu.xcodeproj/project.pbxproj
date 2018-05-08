@@ -19,6 +19,9 @@
 		5652B5A120A03A76009632CC /* Top_storiesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5A020A03A76009632CC /* Top_storiesModel.m */; };
 		5652B5A420A04D3D009632CC /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5A320A04D3D009632CC /* BannerView.m */; };
 		5652B5A720A05CA5009632CC /* BannerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5A620A05CA5009632CC /* BannerImageView.m */; };
+		5652B5B420A1C79B009632CC /* NewInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5B320A1C79B009632CC /* NewInfoViewController.m */; };
+		5652B5B720A1C7BD009632CC /* NewsInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5B620A1C7BD009632CC /* NewsInfoModel.m */; };
+		5652B5BA20A1C96D009632CC /* SectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652B5B920A1C96D009632CC /* SectionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,12 @@
 		5652B5A320A04D3D009632CC /* BannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
 		5652B5A520A05CA5009632CC /* BannerImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerImageView.h; sourceTree = "<group>"; };
 		5652B5A620A05CA5009632CC /* BannerImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerImageView.m; sourceTree = "<group>"; };
+		5652B5B220A1C79B009632CC /* NewInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewInfoViewController.h; sourceTree = "<group>"; };
+		5652B5B320A1C79B009632CC /* NewInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewInfoViewController.m; sourceTree = "<group>"; };
+		5652B5B520A1C7BD009632CC /* NewsInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsInfoModel.h; sourceTree = "<group>"; };
+		5652B5B620A1C7BD009632CC /* NewsInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsInfoModel.m; sourceTree = "<group>"; };
+		5652B5B820A1C96D009632CC /* SectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SectionModel.h; sourceTree = "<group>"; };
+		5652B5B920A1C96D009632CC /* SectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SectionModel.m; sourceTree = "<group>"; };
 		C887E4C6DE054DD8C0023111 /* libPods-zhihu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zhihu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +99,7 @@
 		5652B57620A02CBB009632CC /* zhihu */ = {
 			isa = PBXGroup;
 			children = (
+				5652B5AE20A1C6CB009632CC /* NewsInfo */,
 				5652B58D20A031D5009632CC /* Home */,
 				5652B57720A02CBB009632CC /* AppDelegate.h */,
 				5652B57820A02CBB009632CC /* AppDelegate.m */,
@@ -143,6 +153,43 @@
 				5652B5A320A04D3D009632CC /* BannerView.m */,
 				5652B5A520A05CA5009632CC /* BannerImageView.h */,
 				5652B5A620A05CA5009632CC /* BannerImageView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5652B5AE20A1C6CB009632CC /* NewsInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5652B5AF20A1C6CB009632CC /* Controller */,
+				5652B5B020A1C6CB009632CC /* Model */,
+				5652B5B120A1C6CB009632CC /* View */,
+			);
+			path = NewsInfo;
+			sourceTree = "<group>";
+		};
+		5652B5AF20A1C6CB009632CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5652B5B220A1C79B009632CC /* NewInfoViewController.h */,
+				5652B5B320A1C79B009632CC /* NewInfoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5652B5B020A1C6CB009632CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5652B5B520A1C7BD009632CC /* NewsInfoModel.h */,
+				5652B5B620A1C7BD009632CC /* NewsInfoModel.m */,
+				5652B5B820A1C96D009632CC /* SectionModel.h */,
+				5652B5B920A1C96D009632CC /* SectionModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5652B5B120A1C6CB009632CC /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,6 +296,7 @@
 			files = (
 				5652B5A420A04D3D009632CC /* BannerView.m in Sources */,
 				5652B5A120A03A76009632CC /* Top_storiesModel.m in Sources */,
+				5652B5B720A1C7BD009632CC /* NewsInfoModel.m in Sources */,
 				5652B58720A02CBB009632CC /* main.m in Sources */,
 				5652B59B20A03905009632CC /* NewsLatestModel.m in Sources */,
 				5652B57920A02CBB009632CC /* AppDelegate.m in Sources */,
@@ -256,6 +304,8 @@
 				5652B59720A032FC009632CC /* HomeTableViewCell.m in Sources */,
 				5652B59320A0321F009632CC /* HomeViewController.m in Sources */,
 				5652B5A720A05CA5009632CC /* BannerImageView.m in Sources */,
+				5652B5B420A1C79B009632CC /* NewInfoViewController.m in Sources */,
+				5652B5BA20A1C96D009632CC /* SectionModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
