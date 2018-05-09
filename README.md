@@ -1,17 +1,19 @@
 # zhihu 学习知乎日报开发
 工程结合了知乎日报的API，使用了mvc设计模式，并使用懒加载视图控件。自定义了轮播图控件，轮播图随着tableview的下拉而拉伸。使用webview，并且加载了css样式。并在每块代码添加的详细的注释。
 
-![image-20180509092315140](/var/folders/_n/9k_vxf4s56qgq1c5mvfxdk3w0000gn/T/abnerworks.Typora/image-20180509092315140.png)
+### 界面效果：
+
+![image-20180509092315140](/Users/zhangyizhen/Documents/image-20180509092315140.png)
 
 
 
-![image-20180509092413887](/var/folders/_n/9k_vxf4s56qgq1c5mvfxdk3w0000gn/T/abnerworks.Typora/image-20180509092413887.png)
+![image-20180509092413887](/Users/zhangyizhen/Documents/image-20180509092413887.png)
 
 #### 代码注释：
 
-![image-20180509094314438](/var/folders/_n/9k_vxf4s56qgq1c5mvfxdk3w0000gn/T/abnerworks.Typora/image-20180509094314438.png)
+![image-20180509094314438](/Users/zhangyizhen/Documents/image-20180509094314438.png)
 
-![image-20180509094442486](/var/folders/_n/9k_vxf4s56qgq1c5mvfxdk3w0000gn/T/abnerworks.Typora/image-20180509094442486.png)
+![image-20180509094442486](/Users/zhangyizhen/Documents/image-20180509094442486.png)
 
 ### 注意：
 
