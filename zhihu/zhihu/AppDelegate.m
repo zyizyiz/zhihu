@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UIGestureRecognizerDelegate>
 
 @end
 

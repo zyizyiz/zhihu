@@ -17,7 +17,7 @@
 @end
 @implementation HomeTableViewCell
 
-
+#pragma mark -- 自定义Cell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -37,11 +37,15 @@
     return self;
 }
 
+#pragma mark -- 设置Cell的背景 使之有立体效果
 -(void)createBgView{
     self.bgView = [UIView new];
     self.bgView.backgroundColor = [UIColor whiteColor];
+    //设置阴影偏移量
     self.bgView.layer.shadowOffset = CGSizeMake(1, 1);
+    //设置阴影透明度
     self.bgView.layer.shadowOpacity = 0.3;
+    //设置阴影颜色
     self.bgView.layer.shadowColor = [UIColor blackColor].CGColor;
     
     [self.contentView addSubview:self.bgView];
@@ -55,6 +59,7 @@
     [self.newsIv sd_setImageWithURL: [NSURL URLWithString:[model.images firstObject]]];
 }
 
+#pragma mark -- Cell点击动画
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     
     

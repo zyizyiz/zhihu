@@ -10,7 +10,7 @@
 #import "NewsInfoModel.h"
 #import "SectionModel.h"
 
-@interface NewInfoViewController ()<UIWebViewDelegate,UIScrollViewDelegate>
+@interface NewInfoViewController ()<UIWebViewDelegate,UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong)UIWebView *webView;
 @property (nonatomic,strong)NewsInfoModel *model;
@@ -25,6 +25,7 @@
     [self.view addSubview:self.webView];
     
     [self getNewsInfo:_storiesModel.id];
+    
 }
 
 - (UIWebView *)webView{
@@ -35,9 +36,13 @@
         _webView.backgroundColor = [UIColor whiteColor];
         
         _webView.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT-20);
+        
     }
     return _webView;
 }
+
+
+
 
 #pragma mark -- 获取新闻详情
 -(void)getNewsInfo:(NSInteger)ID {
@@ -49,6 +54,7 @@
         }];
         
         NewsInfoModel *model = [NewsInfoModel mj_objectWithKeyValues:responseObject];
+        //添加css样式
         model.HTML = [NSString stringWithFormat:@"<html><head><link rel = \"stylesheet\" href = %@></link></head><body>%@</body></html>",model.css[0],model.body];
         self.model = model;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
